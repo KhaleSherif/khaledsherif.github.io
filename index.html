@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khaled Sherif | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body { background-color: #0d1117; color: #c9d1d9; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    .accent { color: #58a6ff; }
+    .card { background-color: #161b22; border-radius: 12px; padding: 1.5rem; transition: transform 0.3s, box-shadow 0.3s; opacity: 0; transform: translateY(30px); }
+    .card.visible { opacity: 1; transform: translateY(0); transition: all 0.6s ease-out; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 0 20px rgba(88,166,255,0.2); }
+    a { color: #58a6ff; }
+    img { transition: transform 0.3s ease; }
+    img:hover { transform: scale(1.05); }
+  </style>
+</head>
+<body class="p-6">
+  <!-- Header -->
+  <header class="text-center mb-10 fade-in">
+    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="mx-auto rounded-full mb-4 shadow-lg w-36 h-36">
+    <h1 class="text-4xl font-bold accent mb-2">Khaled Sherif</h1>
+    <p class="text-lg text-gray-400">STEM student passionate about programming and sustainability</p>
+  </header>
+
+  <!-- About -->
+  <section class="max-w-3xl mx-auto mb-10 fade-in">
+    <h2 class="text-2xl font-semibold accent mb-3">About Me</h2>
+    <div class="card">
+      <p>
+        I’m a STEM student driven by curiosity and creativity, blending technology and sustainability 
+        to design impactful solutions. My interests range from EEG-based health monitoring systems to 
+        sustainable water recycling prototypes. I thrive at the intersection of science, innovation, 
+        and purpose-driven engineering.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects & Activities -->
+  <section class="max-w-3xl mx-auto mb-10 fade-in">
+    <h2 class="text-2xl font-semibold accent mb-3">Projects & Activities</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card">
+        <h3 class="text-xl font-semibold mb-2 accent">EEG & Hormonal Monitoring System</h3>
+        <p>
+          Developed a system combining EEG devices and cortisol sensors for continuous, non-invasive monitoring 
+          of brain activity and stress levels. Designed software to provide alerts for abnormal conditions.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="text-xl font-semibold mb-2 accent">Wastewater Recycling Capstone</h3>
+        <p>
+          Created a closed-cycle water feedback system using natural and recycled materials for sustainable 
+          local applications. Designed sensor-controlled valves and automated correction mechanisms.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="text-xl font-semibold mb-2 accent">Robotics Club Leadership</h3>
+        <p>
+          Served as CEO of the Robotics Club, leading a team to design, program, and build functional 
+          robots for STEM competitions. Encouraged collaboration, innovation, and creative problem-solving.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="text-xl font-semibold mb-2 accent">Research & Academic Engagement</h3>
+        <p>
+          Excelled in Math and Mechanics coursework and participated in Olympiad qualifiers. 
+          Conducted STEM research projects focused on sustainability and engineering efficiency.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honors & Awards -->
+  <section class="max-w-3xl mx-auto mb-10 fade-in">
+    <h2 class="text-2xl font-semibold accent mb-3">Honors & Awards</h2>
+    <div class="card">
+      <ul class="list-disc ml-6 space-y-2">
+        <li>CEO, Robotics Club</li>
+        <li>STEM School Excellence Recognition</li>
+        <li>International Mathematical Olympiad Qualifier</li>
+        <li>Top Project Award – Sustainable Water Systems</li>
+        <li>Research Excellence in EEG and Biomedical Engineering</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="max-w-3xl mx-auto text-center fade-in">
+    <h2 class="text-2xl font-semibold accent mb-3">Contact</h2>
+    <div class="card inline-block">
+      <p>Email: <a href="mailto:khaled.sherif@example.com">khaled.sherif@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+      <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/khaledsherif</a></p>
+    </div>
+  </section>
+
+  <footer class="text-center mt-10 text-gray-500 text-sm fade-in">
+    <p>© 2025 Khaled Sherif | Built with ❤️ using Tailwind CSS & animations</p>
+  </footer>
+
+  <!-- Scroll Animations -->
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const fadeSections = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+    fadeSections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
